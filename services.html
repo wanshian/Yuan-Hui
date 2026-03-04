@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>技術服務 | 沅徽實業有限公司</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* 服務頁面專屬 CSS */
+        .service-container { 
+            padding: 100px 8%; 
+            max-width: 1300px; 
+            margin: 0 auto; 
+        }
+        
+        .service-row { 
+            display: flex; 
+            align-items: center; 
+            gap: 80px; 
+            margin-bottom: 120px; 
+        }
+
+        .service-row:nth-child(even) { 
+            flex-direction: row-reverse; 
+        }
+
+        .service-text { flex: 1; }
+        
+        .service-img { 
+            flex: 1; 
+            height: 400px; 
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .service-img img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            transition: transform 0.5s ease;
+        }
+
+        .service-row:hover .service-img img {
+            transform: scale(1.05);
+        }
+
+        .service-text h2 { 
+            color: var(--primary); 
+            font-size: 2.2rem; 
+            margin-bottom: 25px; 
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .service-text h2::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+        }
+
+        .service-text p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #333;
+            margin-top: 8px;
+            margin-bottom: 12px;
+        }
+
+        .service-text ul { list-style: none; }
+        .service-text ul li { 
+            margin-bottom: 18px; 
+            display: flex; 
+            align-items: flex-start; 
+            font-weight: 500;
+        }
+        
+        .service-text ul li i { 
+            color: var(--accent); 
+            margin-right: 15px; 
+            margin-top: 5px; 
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 992px) {
+            .service-row, .service-row:nth-child(even) { 
+                flex-direction: column; 
+                gap: 40px;
+                margin-bottom: 80px;
+            }
+            .service-img { width: 100%; height: 300px; }
+            .service-text { text-align: center; }
+            .service-text h2::after { left: 50%; transform: translateX(-50%); }
+            .service-text ul li { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+<a href="index.html" class="logo">
+    <img src="images/logo.png" alt="沅徽實業 Logo" class="logo-img">
+    
+    <div class="logo-text">
+        <b>沅徽實業有限公司</b>
+        <span>深耕水利 · 專業維護</span>
+    </div>
+</a>
+        <ul class="nav-links">
+            <li><a href="index.html">首頁</a></li>
+            <li><a href="about.html">關於我們</a></li>
+            <li><a href="services.html" style="color: var(--accent);">技術服務</a></li>
+            <li><a href="projects.html">工程實績</a></li>
+            <li><a href="contact.html">聯絡我們</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-banner" style="background: linear-gradient(rgba(0,31,63,0.6), rgba(0,31,63,0.6)), url('images/services-banner.jpg');">
+        <h1 class="anim">技術服務</h1>
+        <p class="anim">提供專業的水利設施維護、燃油管路工程、鋼構補強與現場銲接方案</p>
+    </div>
+
+    <div class="service-container">
+        <div class="service-row">
+            <div class="service-text anim">
+                <h2>水利設施代操作維護</h2>
+                <p>針對各型抽水站與水門設施，我們提供全年無休的代操作與預防性維護服務，確保防汛期間萬無一失。</p>
+                <ul>
+                    <li><i class="fas fa-check-double"></i> 24 小時颱風、豪大雨緊急應變操作駐點。</li>
+                    <li><i class="fas fa-check-double"></i> 泵浦機組、水門驅動裝置定期巡檢與大修。</li>
+                    <li><i class="fas fa-check-double"></i> 撈污機系統維修與清淤設備運作優化。</li>
+                </ul>
+            </div>
+            <div class="service-img img-zoom">
+                <img src="images/water-service.jpg" alt="水利工程">
+            </div>
+        </div>
+
+        <div class="service-row">
+            <div class="service-text anim">
+                <h2>燃油系統與配管工程</h2>
+                <p>專業設計與施工發電機組燃料供應系統，符合嚴謹的工業安全標準與消防法規。</p>
+                <ul>
+                    <li><i class="fas fa-check-double"></i> 工業用地下/地上儲油槽定位與防鏽工程。</li>
+                    <li><i class="fas fa-check-double"></i> 全自動補油系統設計，整合監控水位與壓力警報。</li>
+                    <li><i class="fas fa-check-double"></i> 高強度不鏽鋼燃油管路銲接，確保系統零滲漏。</li>
+                </ul>
+            </div>
+            <div class="service-img img-zoom">
+                <img src="images/fuel-system.jpg" alt="燃油系統工程">
+            </div>
+        </div>
+
+        <div class="service-row">
+            <div class="service-text anim">
+                <h2>鋼構補強與現場銲接</h2>
+                <p>專精於水利設施鋼結構加固與精密銲接工程。潮濕或狹窄的現場環境下，執行金屬熔接與防腐蝕處理，從物理結構上確保各類水機設備與管路的長期穩定性。</p>
+                <ul>
+                    <li><i class="fas fa-check-double"></i> 針對水門、機台支架進行受損維護與抗震加固。</li>
+                    <li><i class="fas fa-check-double"></i> 提供燃油、給排水管路之現場配置與氣密測試。</li>
+                    <li><i class="fas fa-check-double"></i> 執行高品質防銹底漆施工，抵抗惡劣水氣侵蝕。</li>
+                </ul>
+            </div>
+            <div class="service-img img-zoom">
+                <img src="images/welding-work.jpg" alt="鋼構補強">
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p style="color:white; margin-bottom:10px;">沅徽實業有限公司 | 統一編號：28076472</p>
+        <p>地址：臺南市安南區本田路3段339巷77-1號</p>
+        <p>電話：(06) 252-2185 | 傳真：(06) 247-5140</p>
+        <div style="margin-top:20px; font-size:0.8rem;">© 2026 沅徽實業. All Rights Reserved.</div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        const io = new IntersectionObserver((entries)=>{
+            entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in-view'); });
+        },{threshold:0.15});
+        document.querySelectorAll('.anim').forEach(el=> io.observe(el));
+    });
+    </script>
+</body>
+</html>

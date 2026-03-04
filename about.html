@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>關於沅徽 | 沅徽實業有限公司</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* 關於我們頁面專屬 CSS */
+        .about-container { padding: 80px 8%; max-width: 1200px; margin: 0 auto; }
+        .history-timeline { border-left: 3px solid var(--primary); padding-left: 30px; margin: 40px 0; }
+        .history-item { margin-bottom: 35px; position: relative; }
+        .history-item::before { content: ""; position: absolute; left: -41.5px; top: 10px; width: 20px; height: 20px; background: var(--accent); border-radius: 50%; border: 4px solid white; }
+        .history-year { font-weight: 700; color: var(--primary); font-size: 1.2rem; display: block; margin-bottom: 5px; }
+
+        .vision-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-top: 50px; align-items: stretch; }
+        .vision-card { background: var(--gray); padding: 40px 30px; border-radius: 8px; text-align: center; transition: 0.3s; display: flex; flex-direction: column; justify-content: flex-start; }
+        .vision-card:hover { transform: translateY(-5px); background: white; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .vision-card i { font-size: 2.5rem; color: var(--accent); margin-bottom: 20px; }
+
+        .about-container p, .history-item p, .vision-card p {
+            font-size: 1rem; line-height: 1.8; color: #333; margin-top: 8px; margin-bottom: 12px;
+        }
+
+        @media (max-width: 1100px) { .vision-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 600px) { .vision-grid { grid-template-columns: 1fr; } .vision-card { padding: 24px; } }
+    </style>
+</head>
+<body>
+    <nav>
+<a href="index.html" class="logo">
+    <img src="images/logo.png" alt="沅徽實業 Logo" class="logo-img">
+    
+    <div class="logo-text">
+        <b>沅徽實業有限公司</b>
+        <span>深耕水利 · 專業維護</span>
+    </div>
+</a>
+        <ul class="nav-links">
+            <li><a href="index.html">首頁</a></li>
+            <li><a href="about.html" style="color:var(--accent)">關於我們</a></li>
+            <li><a href="services.html">技術服務</a></li>
+            <li><a href="projects.html">工程實績</a></li>
+            <li><a href="contact.html">聯絡我們</a></li>
+        </ul>
+    </nav>
+
+<div class="page-banner" style="background: linear-gradient(rgba(0, 31, 63, 0.6), rgba(0, 31, 63, 0.6)), url('images/about-banner.jpg'); background-size: cover; background-position: center;">
+    <h1 class="anim">關於沅徽</h1>
+    <p class="anim">專業水利設施維護與鋼構機電工程</p>
+</div>
+
+    <div class="about-container">
+        <h2>公司沿革</h2>
+<div class="history-timeline">
+    <div class="history-item">
+        <span class="history-year">2006 年</span>
+        <p>沅徽實業正式創立，立足於臺南，致力於南臺灣水利機電設施之維護與操作。</p>
+    </div>
+    <div class="history-item">
+        <span class="history-year">專業深耕</span>
+        <p>深耕水門維護與鋼構補強領域，累積超過 50 處年度常態維修點位，建立完善的緊急應變體系。</p>
+    </div>
+    <div class="history-item">
+        <span class="history-year">資源整合</span>
+        <p>與長期合作夥伴萬象機械進行技術整合，強化大型泵浦安裝與精密銲接之核心競爭力。</p>
+    </div>
+</div>
+
+        <h2 style="margin-top:60px;">核心理念</h2>
+        <div class="vision-grid">
+            <div class="vision-card anim"><i class="fas fa-shield-alt"></i><h3>穩定至上</h3><p>水利設施不容一絲差錯，我們以專業守護每一道防線。</p></div>
+            <div class="vision-card anim"><i class="fas fa-microchip"></i><h3>技術驅動</h3><p>具備跨領域技術整合力，將自控系統與機械維護完美接軌。</p></div>
+            <div class="vision-card anim"><i class="fas fa-handshake"></i><h3>在地服務</h3><p>立足嘉南地區，提供快速修繕應變服務。</p></div>
+            <div class="vision-card anim"><i class="fas fa-leaf"></i><h3>永續經營</h3><p>以永續與環保為核心，落實節能減碳與循環利用方案。</p></div>
+        </div>
+    </div>
+
+    <footer>
+        <p style="color:white; margin-bottom:10px;">沅徽實業有限公司 | 統一編號：28076472</p>
+        <p>地址：臺南市安南區本田路3段339巷77-1號</p>
+        <p>電話：(06) 252-2185 | 傳真：(06) 247-5140</p>
+        <div style="margin-top:20px; font-size:0.8rem;">© 2026 沅徽實業. All Rights Reserved.</div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', ()=>{
+            const io = new IntersectionObserver((entries)=>{
+                entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in-view'); });
+            },{threshold:0.15});
+            document.querySelectorAll('.anim').forEach(el=> io.observe(el));
+        });
+    </script>
+</body>
+</html>

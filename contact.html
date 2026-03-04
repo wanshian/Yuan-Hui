@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聯絡我們 | 沅徽實業有限公司</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* 聯絡頁面專屬 CSS */
+        .contact-container { padding: 80px 8%; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; }
+        .contact-info h2 { color: var(--primary); margin-bottom: 25px; font-size: 2rem; }
+        .info-item { display: flex; gap: 20px; margin-bottom: 30px; }
+        .info-item i { font-size: 1.5rem; color: var(--accent); margin-top: 5px; }
+        .info-item h4 { color: var(--primary); margin-bottom: 5px; }
+
+        .contact-form { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; color: var(--primary); }
+        .form-group input, .form-group textarea, .form-group select { 
+            width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-family: inherit; font-size: 1rem;
+        }
+        .form-group textarea { height: 150px; resize: vertical; }
+        
+        .submit-btn { 
+            background: var(--primary); color: white; border: none; padding: 15px 30px; 
+            font-size: 1rem; font-weight: bold; border-radius: 4px; cursor: pointer; transition: 0.3s; width: 100%;
+        }
+        .submit-btn:hover { background: var(--accent); color: var(--dark); }
+
+        .map-section { padding: 0 8% 80px; }
+        .map-container { height: 450px; background: #eee; border-radius: 8px; overflow: hidden; }
+
+        @media (max-width: 900px) {
+            .contact-container { grid-template-columns: 1fr; }
+            .contact-form { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+<a href="index.html" class="logo">
+    <img src="images/logo.png" alt="沅徽實業 Logo" class="logo-img">
+    
+    <div class="logo-text">
+        <b>沅徽實業有限公司</b>
+        <span>深耕水利 · 專業維護</span>
+    </div>
+</a>
+        <ul class="nav-links">
+            <li><a href="index.html">首頁</a></li>
+            <li><a href="about.html">關於我們</a></li>
+            <li><a href="services.html">技術服務</a></li>
+            <li><a href="projects.html">工程實績</a></li>
+            <li><a href="contact.html" style="color:var(--accent)">聯絡我們</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-banner" style="background: linear-gradient(rgba(0,31,63,0.6), rgba(0,31,63,0.6)), url('images/contact-banner.jpg');">
+        <h1 class="anim">聯絡我們</h1>
+        <p class="anim">如有任何水利工程、燃油系統需求，歡迎與我們聯繫</p>
+    </div>
+
+    <div class="contact-container">
+        <div class="contact-info anim">
+            <h2>聯絡資訊</h2>
+            <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <h4>辦公地址</h4>
+                    <p>709 臺南市安南區本田路3段339巷77-1號</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-phone-alt"></i>
+                <div>
+                    <h4>聯絡電話</h4>
+                    <p>(06) 252-2185</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-print"></i>
+                <div>
+                    <h4>傳真號碼</h4>
+                    <p>(06) 247-5140</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-id-card"></i>
+                <div>
+                    <h4>統一編號</h4>
+                    <p>28076472</p>
+                </div>
+            </div>
+        </div>
+
+        <form class="contact-form anim">
+            <div class="form-group">
+                <label>諮詢類別</label>
+                <select required>
+                    <option value="">請選擇服務類別</option>
+                    <option value="water">水利設施代操作/維修</option>
+                    <option value="fuel">燃油系統工程</option>
+                    <option value="mechanical">機電整合安裝</option>
+                    <option value="other">其他諮詢</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>聯絡姓名</label>
+                <input type="text" placeholder="請輸入您的姓名" required>
+            </div>
+            <div class="form-group">
+                <label>聯絡電話</label>
+                <input type="tel" placeholder="請輸入聯絡電話" required>
+            </div>
+            <div class="form-group">
+                <label>電子郵件</label>
+                <input type="email" placeholder="example@email.com">
+            </div>
+            <div class="form-group">
+                <label>需求說明</label>
+                <textarea placeholder="請詳細描述您的工程需求或問題..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn">送出諮詢表單</button>
+        </form>
+    </div>
+
+<section class="map-section anim">
+    <div class="map-container">
+<iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d458.73031070622544!2d120.14716954157124!3d23.055171731671853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e77dc0db26865%3A0x84808067c0c0955f!2zNzA56Ie65Y2X5biC5a6J5Y2X5Y2A5pys55Sw6Lev5LiJ5q61MzM55be3NzctMeiZnw!5e0!3m2!1szh-TW!2stw!4v1740375000000!5m2!1szh-TW!2stw" 
+    width="100%" 
+    height="100%" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+    </div>
+</section>
+
+    <footer>
+        <p style="color:white; margin-bottom:10px;">沅徽實業有限公司 | 統一編號：28076472</p>
+        <p>地址：臺南市安南區本田路3段339巷77-1號</p>
+        <p>電話：(06) 252-2185 | 傳真：(06) 247-5140</p>
+        <div style="margin-top:20px; font-size:0.8rem;">© 2026 沅徽實業. All Rights Reserved.</div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', ()=>{
+            const io = new IntersectionObserver((entries)=>{
+                entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in-view'); });
+            },{threshold:0.15});
+            document.querySelectorAll('.anim').forEach(el=> io.observe(el));
+        });
+    </script>
+</body>
+</html>

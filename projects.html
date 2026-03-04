@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>工程實績 | 沅徽實業有限公司</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        .filter-buttons { text-align: center; padding: 40px 8%; background: var(--light); position: sticky; top: 90px; z-index: 900; }
+        .filter-btn { padding: 10px 25px; margin: 5px; border: 1px solid #ddd; background: white; cursor: pointer; border-radius: 25px; transition: 0.3s; }
+        .filter-btn.active, .filter-btn:hover { background: var(--primary); color: white; border-color: var(--primary); }
+
+        /* 修正點：確保容器具備最大寬度並置中 */
+        .projects-container { 
+            padding: 40px 8% 100px; 
+            max-width: 1200px; 
+            margin: 0 auto !important; 
+            display: block; 
+        }
+
+        .project-detail { 
+            background: white; 
+            border-radius: 8px; 
+            margin-bottom: 60px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08); 
+            overflow: hidden; 
+            display: flex; 
+            flex-direction: column; 
+            width: 100%; 
+        }
+        
+        .project-header { display: flex; flex-wrap: wrap; border-bottom: 1px solid #eee; }
+
+        .project-img { 
+            flex: 1.2; 
+            min-width: 300px; 
+            height: 400px; 
+            overflow: hidden; 
+            background: #f0f0f0; 
+        }
+
+        .project-img img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            transition: 0.5s; 
+        }
+        
+        .project-info { 
+            flex: 1; 
+            padding: 30px 40px; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between; 
+        }
+
+        .project-tag { display: inline-block; padding: 4px 12px; background: var(--gray); color: var(--primary); border-radius: 4px; font-size: 0.85rem; margin-bottom: 15px; font-weight: 500; width: fit-content; }
+        .project-info h2 { font-size: 1.6rem; color: var(--primary); margin-bottom: 20px; line-height: 1.4; }
+        .project-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 25px; }
+        .meta-item { display: flex; gap: 12px; align-items: flex-start; }
+        .meta-item i { color: var(--accent); margin-top: 5px; }
+        .project-desc { padding: 30px 40px; background: #fafafa; border-top: 1px solid #eee; }
+        .project-desc h4 { margin-bottom: 10px; color: var(--primary); }
+
+        @media (max-width: 900px) { .project-header { flex-direction: column; } .project-img { height: 250px; } .project-meta { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="沅徽實業 Logo" class="logo-img">
+            <div class="logo-text">
+                <b>沅徽實業有限公司</b>
+                <span>深耕水利 · 專業維護</span>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">首頁</a></li>
+            <li><a href="about.html">關於我們</a></li>
+            <li><a href="services.html">技術服務</a></li>
+            <li><a href="projects.html" style="color:var(--accent)">工程實績</a></li>
+            <li><a href="contact.html">聯絡我們</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-banner" style="background: linear-gradient(rgba(0,31,63,0.6), rgba(0,31,63,0.6)), url('images/projects-banner.jpg'); background-size: cover; background-position: center;">
+        <h1 class="anim">工程實績</h1>
+        <p class="anim">專業經驗與穩定品質的具體呈現</p>
+    </div>
+
+    <div class="filter-buttons anim">
+        <button class="filter-btn active" data-filter="all">全部實績</button>
+        <button class="filter-btn" data-filter="water">水利設施</button>
+        <button class="filter-btn" data-filter="fuel">燃油系統</button>
+    </div>
+
+    <div class="projects-container">
+        
+        <div class="project-detail anim" data-category="water">
+            <div class="project-header">
+                <div class="project-img"><img src="images/project-water-01.jpg" alt="二仁溪"></div>
+                <div class="project-info">
+                    <span class="project-tag">水利設施代操作</span>
+                    <h2>115年度二仁溪及西機場排水水門維護操作管理工作</h2>
+                    <div class="project-meta">
+                        <div class="meta-item"><i class="fas fa-calendar-alt"></i><div><h4>執行年份</h4><p>2026</p></div></div>
+                        <div class="meta-item"><i class="fas fa-tasks"></i><div><h4>核心成果</h4><p>河道清淤，水門保養</p></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="project-desc">
+                <h4>工程內容</h4>
+                <p>承擔二仁溪水門的例行維護與操作管理。</p>
+            </div>
+        </div>
+
+        <div class="project-detail anim" data-category="water">
+            <div class="project-header">
+                <div class="project-img"><img src="images/project-pump-update.jpg" alt="泵浦工程"></div>
+                <div class="project-info">
+                    <span class="project-tag">水利設施更新</span>
+                    <h2>臺南市政府水利局_龜子港排水抽水設備應急工程</h2>
+                    <div class="project-meta">
+                        <div class="meta-item"><i class="fas fa-calendar-alt"></i><div><h4>執行年份</h4><p>2025 年</p></div></div>
+                        <div class="meta-item"><i class="fas fa-tasks"></i><div><h4>核心成果</h4><p>完成大型泵浦與柴油引擎安裝</p></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="project-desc">
+                <h4>工程內容</h4>
+                <p>現場大型水機設備、柴油引擎發電機吊裝定位。</p>
+            </div>
+        </div>
+
+        <div class="project-detail anim" data-category="fuel">
+            <div class="project-header">
+                <div class="project-img"><img src="images/project-fuel-pipe.jpg" alt="燃油系統"></div>
+                <div class="project-info">
+                    <span class="project-tag">燃油管路工程</span>
+                    <h2>財團法人國家實驗研究院 國家高速網路與計算中心_台南IDC機房建築工程(後續擴充)</h2>
+                    <div class="project-meta">
+                        <div class="meta-item"><i class="fas fa-calendar-alt"></i><div><h4>執行年份</h4><p>2025</p></div></div>
+                        <div class="meta-item"><i class="fas fa-tasks"></i><div><h4>核心成果</h4><p>新增一只13.1m³油槽、排風系統及燃油系統</p></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="project-desc">
+                <h4>工程內容</h4>
+                <p>施工燃料供應系統及排風系統。</p>
+            </div>
+        </div>
+
+        <div class="project-detail anim" data-category="water">
+            <div class="project-header">
+                <div class="project-img"><img src="images/project-water-02.jpg" alt="潭底小"></div>
+                <div class="project-info">
+                    <span class="project-tag">水利設施更新</span>
+                    <h2>高雄市政府水利局_潭底小抽水站及五甲尾滯洪池功能提升應急工程</h2>
+                    <div class="project-meta">
+                        <div class="meta-item"><i class="fas fa-calendar-alt"></i><div><h4>執行時間</h4><p>2025年</p></div></div>
+                        <div class="meta-item"><i class="fas fa-money-bill-wave"></i><div><h4>核心成果</h4><p>3.0CMS沉水式抽水機、冷卻系統更新</p></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="project-desc">
+                <h4>工程內容</h4>
+                <p>更新沉水式抽水機與冷卻系統，提升抽水效率與穩定性。</p>
+            </div>
+        </div>
+
+        <div class="project-detail anim" data-category="water">
+            <div class="project-header">
+                <div class="project-img">
+                    <img src="images/project-new-01.jpg" alt="豐華抽水站">
+                </div>
+                <div class="project-info">
+                    <span class="project-tag">水利設備更新</span>
+                    <h2>臺南市政府水利局_豐華抽水站設備更新改善應急工程</h2>
+                    <div class="project-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <div><h4>執行年份</h4><p>2024</p></div>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-tasks"></i>
+                            <div><h4>核心成果</h4><p>1.0CMS沉水式抽水機、420KW柴油引擎發電機更新</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="project-desc">
+                <h4>工程內容</h4>
+                <p>現場大型水機設備、柴油引擎發電機吊裝定位、配電控制整合。</p>
+            </div>
+        </div>
+
+    </div> <footer>
+        <p style="color:white; margin-bottom:10px;">沅徽實業有限公司 | 統一編號：28076472</p>
+        <p>地址：臺南市安南區本田路3段339巷77-1號</p>
+        <p>電話：(06) 252-2185 | 傳真：(06) 247-5140</p>
+        <div style="margin-top:20px; font-size:0.8rem;">© 2026 沅徽實業. All Rights Reserved.</div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', ()=>{
+            const io = new IntersectionObserver((entries)=>{
+                entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in-view'); });
+            },{threshold:0.1});
+            document.querySelectorAll('.anim').forEach(el=> io.observe(el));
+
+            const buttons = document.querySelectorAll('.filter-btn');
+            const projects = document.querySelectorAll('.project-detail');
+            buttons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    buttons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    const filter = btn.dataset.filter;
+                    projects.forEach(p => {
+                        if (filter === 'all' || p.dataset.category === filter) {
+                            p.style.display = 'flex';
+                        } else {
+                            p.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
