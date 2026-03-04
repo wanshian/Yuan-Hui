@@ -6,7 +6,6 @@
     <title>聯絡我們 | 沅徽實業有限公司</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <link rel="stylesheet" href="style.css">
     
     <style>
@@ -31,25 +30,27 @@
         }
         .submit-btn:hover { background: var(--accent); color: var(--dark); }
 
-        .map-section { padding: 0 8% 80px; }
+        .map-section { padding: 0 8% 80px; max-width: 1200px; margin: 0 auto; }
         .map-container { height: 450px; background: #eee; border-radius: 8px; overflow: hidden; }
 
         @media (max-width: 900px) {
-            .contact-container { grid-template-columns: 1fr; }
+            .contact-container { grid-template-columns: 1fr; padding: 40px 8%; }
             .contact-form { padding: 25px; }
         }
+
+        /* 確保頁尾永遠置底並橫跨全寬 */
+        footer { clear: both; width: 100%; }
     </style>
 </head>
 <body>
     <nav>
-<a href="index.html" class="logo">
-    <img src="images/logo.png" alt="沅徽實業 Logo" class="logo-img">
-    
-    <div class="logo-text">
-        <b>沅徽實業有限公司</b>
-        <span>深耕水利 · 專業維護</span>
-    </div>
-</a>
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="沅徽實業 Logo" class="logo-img">
+            <div class="logo-text">
+                <b>沅徽實業有限公司</b>
+                <span>深耕水利 · 專業維護</span>
+            </div>
+        </a>
         <ul class="nav-links">
             <li><a href="index.html">首頁</a></li>
             <li><a href="about.html">關於我們</a></li>
@@ -59,7 +60,7 @@
         </ul>
     </nav>
 
-    <div class="page-banner" style="background: linear-gradient(rgba(0,31,63,0.6), rgba(0,31,63,0.6)), url('images/contact-banner.jpg');">
+    <div class="page-banner" style="background: linear-gradient(rgba(0,31,63,0.6), rgba(0,31,63,0.6)), url('images/contact-banner.jpg'); background-size: cover; background-position: center;">
         <h1 class="anim">聯絡我們</h1>
         <p class="anim">如有任何水利工程、燃油系統需求，歡迎與我們聯繫</p>
     </div>
@@ -97,48 +98,45 @@
             </div>
         </div>
 
-        <form class="contact-form anim">
+        <form action="https://formspree.io/f/xreaewnb" method="POST" class="contact-form anim">
             <div class="form-group">
-                <label>諮詢類別</label>
-                <select required>
-                    <option value="">請選擇服務類別</option>
-                    <option value="water">水利設施代操作/維修</option>
-                    <option value="fuel">燃油系統工程</option>
-                    <option value="mechanical">機電整合安裝</option>
-                    <option value="other">其他諮詢</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>聯絡姓名</label>
-                <input type="text" placeholder="請輸入您的姓名" required>
+                <label>貴司名稱 / 聯絡人</label>
+                <input type="text" name="公司或姓名" required placeholder="例如：某某營造 / 王先生">
             </div>
             <div class="form-group">
                 <label>聯絡電話</label>
-                <input type="tel" placeholder="請輸入聯絡電話" required>
+                <input type="tel" name="電話" required placeholder="請輸入聯絡電話">
             </div>
             <div class="form-group">
                 <label>電子郵件</label>
-                <input type="email" placeholder="example@email.com">
+                <input type="email" name="email" required placeholder="請輸入您的 Email">
             </div>
             <div class="form-group">
-                <label>需求說明</label>
-                <textarea placeholder="請詳細描述您的工程需求或問題..."></textarea>
+                <label>諮詢項目</label>
+                <select name="諮詢項目">
+                    <option value="水利設施">水利設施維護與代操作</option>
+                    <option value="燃油系統">燃油系統與不鏽鋼管路</option>
+                    <option value="鋼構銲接">鋼構補強與現場銲接</option>
+                    <option value="其他">其他工程諮詢</option>
+                </select>
             </div>
-            <button type="submit" class="submit-btn">送出諮詢表單</button>
+            <div class="form-group">
+                <label>需求描述</label>
+                <textarea name="需求內容" rows="5" placeholder="請簡述您的工程需求，我們將盡快回覆您。"></textarea>
+            </div>
+            <button type="submit" class="submit-btn">送出諮詢訊息</button>
         </form>
-    </div>
-
-<section class="map-section anim">
+    </div> <section class="map-section anim">
     <div class="map-container">
-<iframe 
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d458.73031070622544!2d120.14716954157124!3d23.055171731671853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e77dc0db26865%3A0x84808067c0c0955f!2zNzA56Ie65Y2X5biC5a6J5Y2X5Y2A5pys55Sw6Lev5LiJ5q61MzM55be3NzctMeiZnw!5e0!3m2!1szh-TW!2stw!4v1740375000000!5m2!1szh-TW!2stw" 
-    width="100%" 
-    height="100%" 
-    style="border:0;" 
-    allowfullscreen="" 
-    loading="lazy" 
-    referrerpolicy="no-referrer-when-downgrade">
-</iframe>
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.21829631322!2d120.1458883!3d23.052444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e04d498687391%3A0xc3f8e58a2d3986a!2zNzA56Ie65Y2X5biC5a6J5Y2X5Y2A5pys55Sw6Lev5LiJ5q61MzM55be3NzctMeiZnw!5e0!3m2!1szh-TW!2stw!4v1709537000000!5m2!1szh-TW!2stw" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
     </div>
 </section>
 
