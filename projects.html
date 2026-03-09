@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>工程實績 | 沅徽實業有限公司</title>
+    <script>
+        if (sessionStorage.getItem("hasSeenLoader")) {
+            document.documentElement.classList.add('no-loader');
+        }
+    </script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -69,8 +74,19 @@
     </style>
 </head>
 <body>
+<div id="loader-wrapper">
+    <div class="loader-content">
+        <div class="ripple-container">
+            <img src="images/logo.png" alt="沅徽實業" class="loader-logo">
+            <div class="ripple"></div>
+            <div class="ripple"></div>
+            <div class="ripple"></div>
+        </div>
+        <p class="loader-text">沅徽實業 · 深耕水利</p>
+    </div>
+</div>
     <nav>
-        <a href="./" class="logo">
+        <a href="index.html" class="logo">
             <img src="images/logo.png" alt="沅徽實業 Logo" class="logo-img">
             <div class="logo-text">
                 <b>沅徽實業有限公司</b>
@@ -78,7 +94,7 @@
             </div>
         </a>
         <ul class="nav-links">
-            <li><a href="./">首頁</a></li>
+            <li><a href="index.html">首頁</a></li>
             <li><a href="about.html">關於我們</a></li>
             <li><a href="services.html">技術服務</a></li>
             <li><a href="projects.html" style="color:var(--accent)">工程實績</a></li>
@@ -149,7 +165,7 @@
             </div>
             <div class="project-desc">
                 <h4>工程內容</h4>
-                <p>燃油系統及排風系統安裝。</p>
+                <p>燃油供應系統及排風系統安裝。</p>
             </div>
         </div>
 
@@ -161,13 +177,13 @@
                     <h2>高雄市政府水利局_潭底小抽水站及五甲尾滯洪池功能提升應急工程</h2>
                     <div class="project-meta">
                         <div class="meta-item"><i class="fas fa-calendar-alt"></i><div><h4>執行時間</h4><p>2025年</p></div></div>
-                        <div class="meta-item"><i class="fas fa-tasks"></i><div><h4>核心成果</h4><p>3.0CMS沉水式抽水機、冷卻水塔系統更新</p></div></div>
+                        <div class="meta-item"><i class="fas fa-money-bill-wave"></i><div><h4>核心成果</h4><p>3.0CMS沉水式抽水機、冷卻水塔系統更新</p></div></div>
                     </div>
                 </div>
             </div>
             <div class="project-desc">
                 <h4>工程內容</h4>
-                <p>更新沉水式抽水機與冷卻系統，提升抽水效率與穩定性。</p>
+                <p>更新沉水式抽水機與冷卻水塔系統，提升抽水效率與穩定性。</p>
             </div>
         </div>
 
@@ -230,12 +246,25 @@
             });
         });
     </script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const loader = document.getElementById("loader-wrapper");
+        
+        // 檢查瀏覽器內部的「快閃記憶體」，看看這回合是否看過動畫
+        if (sessionStorage.getItem("hasSeenLoader")) {
+            // 如果看過了，直接移除動畫層，不留痕跡
+            loader.style.display = "none";
+        } else {
+            // 如果是第一次進站，等網頁載入完畢後執行動畫
+            window.addEventListener("load", function() {
+                setTimeout(() => {
+                    loader.classList.add("loader-hidden");
+                    // 標記「已經看過了」，直到關閉瀏覽器分頁為止
+                    sessionStorage.setItem("hasSeenLoader", "true");
+                }, 1500);
+            });
+        }
+    });
+</script>
 </body>
-
 </html>
-
-
-
-
-
-
